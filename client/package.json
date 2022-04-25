@@ -5,9 +5,9 @@
     "npm": "6.14.13"
   },
   "scripts": {
-    "dev": "webpack-dev-server",
-    "build": "webpack --mode production",
-    "start": "webpack --watch"
+    "dev": "webpack serve",
+    "start": "node server.js",
+    "build": "webpack --mode production"
   },
   "author": "2U",
   "license": "UNLICENSED",
