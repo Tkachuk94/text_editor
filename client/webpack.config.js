@@ -9,25 +9,21 @@ module.exports = () => {
     entry: {
       main: './src/js/index.js',
       install: './src/js/install.js',
-      //database: './src/js/database.js'
     },
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      // Adding Webpack plugin to generate HTML and inject our bundles
       new HtmlWebpackPlugin({
         template: './index.html',
         title: 'JATE'
       }),
       // TODO: Add and configure workbox plugins for a service worker and manifest file.
-      // service worker
       new InjectManifest({
         swSrc: './src-sw.js',
         swDest: 'src-sw.js',
       }),
-      // manifest.json
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
